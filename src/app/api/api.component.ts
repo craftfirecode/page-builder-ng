@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import {JsonPipe} from "@angular/common";
 import {HttpClient} from '@angular/common/http';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-api',
-    imports: [
-        JsonPipe
-    ],
+  imports: [
+    JsonPipe,
+    MatButton
+  ],
   templateUrl: './api.component.html',
   styleUrl: './api.component.scss'
 })
