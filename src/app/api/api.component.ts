@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {JsonPipe, NgSwitch, NgSwitchCase, NgSwitchDefault} from "@angular/common";
 import {HttpClient} from '@angular/common/http';
 import {MatButton} from '@angular/material/button';
+import {ApiService} from '../api.service';
 
 @Component({
   selector: 'app-api',
@@ -19,13 +20,14 @@ export class ApiComponent implements OnInit {
   data = []
   dayName: string | undefined;
 
-  constructor(private http: HttpClient) {
-    this.http.get<any>('https://jsonplaceholder.typicode.com/posts/1').subscribe(res => {
-      this.data = res;
-    });
+  constructor(private apiService: ApiService) {
   }
 
   ngOnInit(): void {
+    this.apiService.getData().subscribe(res => {
+      this.data = res;
+    });
+
     const day: number = new Date().getDay();
     switch (day) {
       case 0:
