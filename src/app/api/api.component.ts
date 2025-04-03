@@ -20,8 +20,7 @@ export class ApiComponent implements OnInit {
   dayName: string | undefined;
 
   constructor(private http: HttpClient) {
-    http.get<any>('https://jsonplaceholder.typicode.com/posts/1').subscribe(res => {
-      console.log(res);
+    this.http.get<any>('https://jsonplaceholder.typicode.com/posts/1').subscribe(res => {
       this.data = res;
     });
   }

@@ -4,7 +4,7 @@ import {ApiComponent} from './api/api.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ApiComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
