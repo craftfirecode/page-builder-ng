@@ -1,16 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/posts/1';
+  private apiUrl = environment.stapiUrl;
+  private apiKey = environment.stapiApi;
 
   constructor(private http: HttpClient) {}
 
   getData(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+    return this.http.get<any>("https://jsonplaceholder.typicode.com/posts/1");
+  }
+
+  getPageData(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/api/pages?filters[url][$eq]=index&customPopulate=nested`, {
+      headers: { 'Authorization': `Bearer ${this.apiKey}` }
+    });
   }
 }

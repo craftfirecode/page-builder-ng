@@ -18,6 +18,7 @@ import {ApiService} from '../api.service';
 })
 export class ApiComponent implements OnInit {
   data = []
+  strapiData = []
   dayName: string | undefined;
 
   constructor(private apiService: ApiService) {
@@ -26,6 +27,10 @@ export class ApiComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getData().subscribe(res => {
       this.data = res;
+    });
+
+    this.apiService.getPageData().subscribe(res => {
+      this.strapiData = res.data[0].zone;
     });
 
     const day: number = new Date().getDay();
