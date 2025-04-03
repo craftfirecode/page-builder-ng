@@ -16,8 +16,8 @@ export class ApiService {
     return this.http.get<any>("https://jsonplaceholder.typicode.com/posts/1");
   }
 
-  getPageData(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/api/pages?filters[url][$eq]=index&customPopulate=nested`, {
+  getPageData(urlFilter: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/api/pages?filters[url][$eq]=${urlFilter}&customPopulate=nested`, {
       headers: { 'Authorization': `Bearer ${this.apiKey}` }
     });
   }

@@ -15,17 +15,16 @@
         <ng-container *ngFor="let item of strapiData">
           <li><a [routerLink]="item.to" routerLinkActive="bg-red-500" ariaCurrentWhenActive="page">{{ item.label }}</a></li>
         </ng-container>
+        <a routerLink="/impressum" routerLinkActive="bg-red-500" ariaCurrentWhenActive="page">Impressum</a>
+        <a routerLink="/datenschutz" routerLinkActive="bg-red-500" ariaCurrentWhenActive="page">Datenschutz</a>
+
       </ul>
     </nav>
-
-    <div class="example-sidenav-content">
+      <div class="example-sidenav-content">
       <button type="button" mat-button (click)="drawer.toggle()">
         Toggle sidenav
       </button>
     </div>
-
-
-
     <main>
       <router-outlet />
     </main>

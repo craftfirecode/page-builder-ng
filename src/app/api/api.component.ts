@@ -29,7 +29,7 @@ export class ApiComponent implements OnInit {
       this.data = res;
     });
 
-    this.apiService.getPageData().subscribe(res => {
+    this.apiService.getPageData('index').subscribe(res => {
       this.strapiData = res.data[0].zone;
     });
 
