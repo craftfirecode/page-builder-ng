@@ -1,10 +1,38 @@
-<nav>
-  <ul>
-    <li><a routerLink="/" routerLinkActive="" ariaCurrentWhenActive="page">Index Component</a></li>
-    <li><a routerLink="/test" routerLinkActive="bg-red-500" ariaCurrentWhenActive="page">Test Component</a></li>
-  </ul>
-</nav>
-<main>
-  <router-outlet />
-</main>
-<footer>Footer</footer>
+
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="over">
+    <p>Auto-resizing sidenav</p>
+    @if (showFiller) {
+      <p>Lorem, ipsum dolor sit amet consectetur.</p>
+    }
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <nav>
+      <ul>
+        <li><a routerLink="/" routerLinkActive="" ariaCurrentWhenActive="page">Index Component</a></li>
+        <li><a routerLink="/test" routerLinkActive="bg-red-500" ariaCurrentWhenActive="page">Test Component</a></li>
+      </ul>
+    </nav>
+
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div>
+
+
+
+    <main>
+      <router-outlet />
+    </main>
+    <footer>Footer</footer>
+
+  </mat-drawer-content>
+
+
+</mat-drawer-container>
