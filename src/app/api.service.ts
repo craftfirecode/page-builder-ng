@@ -21,4 +21,10 @@ export class ApiService {
       headers: { 'Authorization': `Bearer ${this.apiKey}` }
     });
   }
+
+  getSettingsData(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/api/navigation?customPopulate=nested`, {
+      headers: { 'Authorization': `Bearer ${this.apiKey}` }
+    });
+  }
 }

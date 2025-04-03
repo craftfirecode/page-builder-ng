@@ -1,5 +1,3 @@
-
-
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="over">
     <p>Auto-resizing sidenav</p>
@@ -14,8 +12,9 @@
   <mat-drawer-content>
     <nav>
       <ul>
-        <li><a routerLink="/" routerLinkActive="" ariaCurrentWhenActive="page">Index Component</a></li>
-        <li><a routerLink="/test" routerLinkActive="bg-red-500" ariaCurrentWhenActive="page">Test Component</a></li>
+        <ng-container *ngFor="let item of strapiData">
+          <li><a [routerLink]="item.to" routerLinkActive="bg-red-500" ariaCurrentWhenActive="page">{{ item.label }}</a></li>
+        </ng-container>
       </ul>
     </nav>
 

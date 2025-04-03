@@ -31,7 +31,6 @@ export class ApiComponent implements OnInit {
 
     this.apiService.getPageData().subscribe(res => {
       this.strapiData = res.data[0].zone;
-      console.log(this.strapiData);
     });
 
     const day: number = new Date().getDay();
