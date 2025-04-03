@@ -2,3 +2,15 @@
 {{data | json }}
 <button mat-button>Basic</button>
 <button mat-stroked-button>Basic</button>
+<p>Today is: {{ dayName }}</p>
+<p>Today is also:
+<span [ngSwitch]="2">
+  <span *ngSwitchCase="0">Sunday</span>
+  <span *ngSwitchCase="1">Monday</span>
+  <span *ngSwitchCase="2">Tuesday</span>
+  <span *ngSwitchCase="3">Wednesday</span>
+  <span *ngSwitchCase="4">Thursday</span>
+  <span *ngSwitchCase="5">Friday</span>
+  <span *ngSwitchCase="6">Saturday</span>
+  <span *ngSwitchDefault>Invalid day</span>
+</span>
