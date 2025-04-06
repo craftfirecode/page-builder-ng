@@ -2,13 +2,15 @@ import {Component, Input} from '@angular/core';
 import {ImageComponent} from '../image/image.component';
 import {WysiwygComponent} from '../wysiwyg/wysiwyg.component';
 import {RouterLink} from '@angular/router';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-image-wysiwyg',
   imports: [
     ImageComponent,
     WysiwygComponent,
-    RouterLink
+    RouterLink,
+    NgIf
   ],
   templateUrl: './image-wysiwyg.component.html',
   styleUrl: './image-wysiwyg.component.scss'

@@ -78,3 +78,26 @@ small {
   font-weight: 700; /* Bootstrap 4: font-weight for bold */
 }
 
+/* styles.scss */
+.text-active {
+  @apply text-[#00c16a];
+}
+
+.bg-active {
+  @apply bg-[#1d293d];
+}
+
+.btn {
+  padding: 8px 16px;
+}
+
+.btn-primary {
+  color: #00c16a;
+  background-color: #1d293d;
+  border-radius: 7px;
+  border: solid 1px #00c16a;
+  transition: all 0.5s;
+  &:hover {
+    background-color: transparent;
+  }
+}
