@@ -22,7 +22,7 @@ export class TestComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      const id = params.get('id') ?? '';
+      const id = params.get('pageName') ?? '';
       this.apiService.getPageData(id).subscribe(res => {
         this.strapiData = res.data[0].zone;
       });
