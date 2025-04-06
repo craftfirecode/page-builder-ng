@@ -27,4 +27,29 @@ export class ApiService {
       headers: { 'Authorization': `Bearer ${this.apiKey}` }
     });
   }
+
+  getBlogListData(): Observable<any> {
+    return this.http.get<any>(`/api/blogs?customPopulate=nested`, {
+      headers: { 'Authorization': `Bearer ${this.apiKey}` }
+    });
+  }
+
+  getBlogData(urlFilter: string): Observable<any> {
+    return this.http.get<any>(`/api/blogs?filters[url][$eq]=${urlFilter}&customPopulate=nested`, {
+      headers: { 'Authorization': `Bearer ${this.apiKey}` }
+    });
+  }
+
+  getPostListData(): Observable<any> {
+    return this.http.get<any>(`/api/posts?customPopulate=nested`, {
+      headers: { 'Authorization': `Bearer ${this.apiKey}` }
+    });
+  }
+
+  getPostData(urlFilter: string): Observable<any> {
+    return this.http.get<any>(`/api/posts?filters[url][$eq]=${urlFilter}&customPopulate=nested`, {
+      headers: { 'Authorization': `Bearer ${this.apiKey}` }
+    });
+  }
+
 }
