@@ -1,0 +1,7 @@
+<ng-container *ngFor="let component of data; let i = index">
+  <ng-container [ngSwitch]="component.__component">
+    <section *ngSwitchCase="'cms.content'">
+      <app-wysiwyg [data]="component" />
+    </section>
+  </ng-container>
+</ng-container>

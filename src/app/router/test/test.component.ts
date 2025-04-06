@@ -3,11 +3,13 @@ import {Meta, Title} from '@angular/platform-browser';
 import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../api.service';
 import {JsonPipe} from '@angular/common';
+import {BuilderComponent} from '../../components/ui/builder/builder.component';
 
 @Component({
   selector: 'app-test',
   imports: [
-    JsonPipe
+    JsonPipe,
+    BuilderComponent
   ],
   templateUrl: './test.component.html',
   styleUrl: './test.component.scss'
