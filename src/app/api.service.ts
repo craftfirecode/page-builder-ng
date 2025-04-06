@@ -7,49 +7,31 @@ import {environment} from '../environments/environment';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = environment.stapiUrl;
-  private apiKey = environment.stapiApi;
+  private apiUrl = environment.bffApiUrl;
 
   constructor(private http: HttpClient) {}
 
-  getData(): Observable<any> {
-    return this.http.get<any>("https://jsonplaceholder.typicode.com/posts/1");
-  }
-
   getPageData(urlFilter: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/api/pages?filters[url][$eq]=${urlFilter}&customPopulate=nested`, {
-      headers: { 'Authorization': `Bearer ${this.apiKey}` }
-    });
+    return this.http.get<any>(`${this.apiUrl}/pages`, { params: { url: urlFilter } });
   }
 
   getSettingsData(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/api/navigation?customPopulate=nested`, {
-      headers: { 'Authorization': `Bearer ${this.apiKey}` }
-    });
+    return this.http.get<any>(`${this.apiUrl}/navigation`);
   }
 
   getBlogListData(): Observable<any> {
-    return this.http.get<any>(`/api/blogs?customPopulate=nested`, {
-      headers: { 'Authorization': `Bearer ${this.apiKey}` }
-    });
+    return this.http.get<any>(`${this.apiUrl}/blogs`);
   }
 
   getBlogData(urlFilter: string): Observable<any> {
-    return this.http.get<any>(`/api/blogs?filters[url][$eq]=${urlFilter}&customPopulate=nested`, {
-      headers: { 'Authorization': `Bearer ${this.apiKey}` }
-    });
+    return this.http.get<any>(`${this.apiUrl}/blogs`, { params: { url: urlFilter } });
   }
 
   getPostListData(): Observable<any> {
-    return this.http.get<any>(`/api/posts?customPopulate=nested`, {
-      headers: { 'Authorization': `Bearer ${this.apiKey}` }
-    });
+    return this.http.get<any>(`${this.apiUrl}/posts`);
   }
 
   getPostData(urlFilter: string): Observable<any> {
-    return this.http.get<any>(`/api/posts?filters[url][$eq]=${urlFilter}&customPopulate=nested`, {
-      headers: { 'Authorization': `Bearer ${this.apiKey}` }
-    });
+    return this.http.get<any>(`${this.apiUrl}/posts`, { params: { url: urlFilter } });
   }
-
 }
