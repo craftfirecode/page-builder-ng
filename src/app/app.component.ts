@@ -31,7 +31,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getSettingsData().subscribe(res => {
       this.strapiData = res.data.top;
-      console.log(this.strapiData);
     });
   }
 }
