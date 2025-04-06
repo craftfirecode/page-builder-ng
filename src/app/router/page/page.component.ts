@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {BuilderComponent} from "../../components/ui/builder/builder.component";
+import {BuilderComponent} from "../../components/cms/builder/builder.component";
 import {Meta, Title} from '@angular/platform-browser';
 import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../api.service';

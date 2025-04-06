@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {WysiwygComponent} from '../wysiwyg/wysiwyg.component';
+import {WysiwygComponent} from '../../ui/wysiwyg/wysiwyg.component';
 import {NgForOf, NgSwitch, NgSwitchCase} from '@angular/common';
 
 @Component({
