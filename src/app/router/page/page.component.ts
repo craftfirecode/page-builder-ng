@@ -1,11 +1,31 @@
 import { Component } from '@angular/core';
+import {BuilderComponent} from "../../components/ui/builder/builder.component";
+import {Meta, Title} from '@angular/platform-browser';
+import {ActivatedRoute} from '@angular/router';
+import {ApiService} from '../../api.service';
 
 @Component({
   selector: 'app-page',
-  imports: [],
+    imports: [
+        BuilderComponent
+    ],
   templateUrl: './page.component.html',
   styleUrl: './page.component.scss'
 })
 export class PageComponent {
+  strapiData = []
 
+  constructor(private metaService: Meta, private titleService: Title, private route: ActivatedRoute, private apiService: ApiService) {
+    this.titleService.setTitle('Mein Seitentitel');
+    this.metaService.addTag({ name: 'description', content: 'Meine Seitenbeschreibung' });
+  }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('url') ?? '';
+      this.apiService.getPageData(id).subscribe(res => {
+        this.strapiData = res.data[0].zone;
+      });
+    });
+  }
 }
