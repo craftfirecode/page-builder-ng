@@ -1,7 +1,13 @@
 <ng-container *ngFor="let component of data; let i = index">
   <ng-container [ngSwitch]="component.__component">
-    <section *ngSwitchCase="'cms.content'">
+    <section class="container mx-auto" *ngSwitchCase="'cms.content'">
       <app-wysiwyg [data]="component" />
+    </section>
+    <section class="container mx-auto" *ngSwitchCase="'cms.image'">
+      <app-image [data]="component" />
+    </section>
+    <section class="container mx-auto" *ngSwitchCase="'cms.content-image'">
+      <app-image-wysiwyg [data]="component" />
     </section>
   </ng-container>
 </ng-container>

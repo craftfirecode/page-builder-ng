@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BuilderComponent} from "../../components/cms/builder/builder.component";
 import {Meta, Title} from '@angular/platform-browser';
 import {ActivatedRoute} from '@angular/router';
@@ -12,7 +12,7 @@ import {ApiService} from '../../api.service';
   templateUrl: './page.component.html',
   styleUrl: './page.component.scss'
 })
-export class PageComponent {
+export class PageComponent implements OnInit {
   strapiData = []
 
   constructor(private metaService: Meta, private titleService: Title, private route: ActivatedRoute, private apiService: ApiService) {
