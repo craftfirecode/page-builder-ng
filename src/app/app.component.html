@@ -13,6 +13,9 @@
     <div class="flex flex-col h-[100vh]">
       <nav>
         <ul>
+          <li>
+            <a routerLink="/">Index</a>
+          </li>
           <ng-container *ngFor="let item of strapiData">
             <li><a [routerLink]="item.to" routerLinkActive="bg-red-500" ariaCurrentWhenActive="page">{{ item.label }}</a></li>
           </ng-container>
