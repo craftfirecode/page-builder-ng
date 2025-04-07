@@ -4,7 +4,7 @@
       <ng-container *ngFor="let item of strapiData">
         <div class="border-fx">
           <div class="bg-black h-[100%]">
-            <a [routerLink]="['/portfolio', item.url]">
+            <a [routerLink]="['/blog', item.url]">
               <img
                 [alt]="item.title"
                 [src]="environment.apiUrl+ item.thumbnail.url"
