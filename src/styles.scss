@@ -18,11 +18,6 @@ html {
 html, body {
   height: 100%;
 }
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: #030712 !important;
-}
 
 /**/
 
@@ -97,7 +92,17 @@ small {
   border-radius: 7px;
   border: solid 1px #00c16a;
   transition: all 0.5s;
+
   &:hover {
     background-color: transparent;
   }
+}
+
+.border-fx {
+  position: relative;
+  overflow: hidden;
+  padding: 2px;
+  background: linear-gradient(90deg, #f0f, #0ff, #ff0, #f0f);
+  background-size: 200% 200%;
+  animation: gradient-spin 5s linear infinite;
 }

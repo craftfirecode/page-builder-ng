@@ -1,2 +1,31 @@
-<p>blog-list works!</p>
-<a routerLink="/blog/1">blog 1</a>
+<div class="container mx-auto mt-5">
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+    <ng-container *ngIf="strapiData">
+      <ng-container *ngFor="let item of strapiData">
+        <div class="border-fx">
+          <div class="bg-black h-[100%]">
+            <a [routerLink]="['/portfolio', item.url]">
+              <img
+                [alt]="item.title"
+                [src]="'https://api.craftfire.de' + item.thumbnail.url"
+                class="w-full h-48 object-cover hover:grayscale"
+              />
+            </a>
+            <div class="px-3 py-6">
+              <h3 class="font-bold">{{ item.title }}</h3>
+              <div class="my-3">
+                <app-badge>{{ item.tag?.tag }}</app-badge>
+              </div>
+              <div class="mb-8">
+                {{ item.description }}
+              </div>
+              <a [routerLink]="['/portfolio', item.url]" class="btn btn-primary">
+                Jetzt Lesen
+              </a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
