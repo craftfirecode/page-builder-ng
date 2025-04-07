@@ -17,13 +17,12 @@ export class IndexComponent implements OnInit {
 
   constructor(private metaService: Meta, private titleService: Title, private route: ActivatedRoute, private apiService: ApiService) {
     this.titleService.setTitle('INDEX');
-    this.metaService.addTag({ name: 'description', content: 'Meine Seitenbeschreibung' });
+    this.metaService.addTag({name: 'description', content: 'Meine Seitenbeschreibung'});
   }
 
   ngOnInit(): void {
     this.apiService.getPageData('index').subscribe(res => {
       this.strapiData = res.data[0].zone;
-      console.log(res.data[0].zone);
     });
   }
 }

@@ -25,7 +25,6 @@ export class PortfolioComponent implements OnInit {
       const id = params.get('url') ?? '';
       this.apiService.getPostData(id).subscribe(res => {
         this.strapiData = res.data[0].zone;
-        console.log(res.data[0].zone);
       });
     });
   }
