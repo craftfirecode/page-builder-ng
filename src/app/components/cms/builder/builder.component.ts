@@ -3,6 +3,7 @@ import {WysiwygComponent} from '../../ui/wysiwyg/wysiwyg.component';
 import {NgForOf, NgSwitch, NgSwitchCase} from '@angular/common';
 import {ImageComponent} from '../../ui/image/image.component';
 import {ImageWysiwygComponent} from '../../ui/image-wysiwyg/image-wysiwyg.component';
+import {SpaceComponent} from '../../ui/space/space.component';
 
 @Component({
   selector: 'app-builder',
@@ -12,7 +13,8 @@ import {ImageWysiwygComponent} from '../../ui/image-wysiwyg/image-wysiwyg.compon
     NgSwitchCase,
     NgForOf,
     ImageComponent,
-    ImageWysiwygComponent
+    ImageWysiwygComponent,
+    SpaceComponent
   ],
   templateUrl: './builder.component.html',
   styleUrl: './builder.component.scss'
