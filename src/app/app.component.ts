@@ -5,6 +5,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {ApiService} from './api.service';
 import {NgForOf} from '@angular/common';
 import {LucideAngularModule} from 'lucide-angular';
+import {BreadcrumbComponent} from './components/ui/breadcrumb/breadcrumb.component';
 
 export interface StrapiData {
   id: number;
@@ -17,13 +18,12 @@ export interface StrapiData {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatSidenavModule, MatButtonModule, NgForOf, LucideAngularModule],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatSidenavModule, MatButtonModule, NgForOf, LucideAngularModule, BreadcrumbComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
   title = 'page-builder-ng';
-  showFiller = false;
   strapiData: StrapiData[] = [];
 
   constructor(private apiService: ApiService) {

@@ -1,0 +1,11 @@
+<div class="breadcrumb">
+  <a routerLink="/">Home</a>
+  <span *ngFor="let segment of breadcrumbSegments; let last = last; let i = index">
+    / <ng-container *ngIf="!last; else lastSegment">
+      <a [routerLink]="buildLink(i)">{{ segment | titlecase }}</a>
+    </ng-container>
+    <ng-template #lastSegment>
+      <span class="breadcrumb-item underline">{{ segment | titlecase }}</span>
+    </ng-template>
+  </span>
+</div>
