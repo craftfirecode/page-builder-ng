@@ -106,3 +106,12 @@ small {
   background-size: 200% 200%;
   animation: gradient-spin 5s linear infinite;
 }
+
+.border-fx-sm {
+  position: relative;
+  overflow: hidden;
+  padding: 1px;
+  background: linear-gradient(90deg, #f0f, #0ff, #ff0, #f0f);
+  background-size: 200% 200%;
+  animation: gradient-spin 5s linear infinite;
+}
