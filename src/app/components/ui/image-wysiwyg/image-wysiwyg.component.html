@@ -1,12 +1,12 @@
 <div class="flex grid gap-7 md:grid-cols-1 lg:grid-cols-2 items-center">
   <div>
-    <app-image [data]="data" />
+    <app-image [data]="data"/>
   </div>
-  <div>
-    <app-wysiwyg [data]="data" />
-    <ng-container *ngIf="data.button.value">
+  <div [ngClass]="{'order-last': data.revert, 'md:order-last lg:order-first': !data.revert}">
+    <app-wysiwyg [data]="data"/>
+    <ng-container *ngIf="data?.button">
       <div class="mt-5">
-        <a class="btn btn-primary" [routerLink]="data.button.to" [innerText]="data.button.value"></a>
+        <a [innerText]="data.button.value" [routerLink]="data.button.to" class="btn btn-primary"></a>
       </div>
     </ng-container>
   </div>

@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {ImageComponent} from '../image/image.component';
 import {WysiwygComponent} from '../wysiwyg/wysiwyg.component';
 import {RouterLink} from '@angular/router';
-import {NgIf} from '@angular/common';
+import {NgClass, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-image-wysiwyg',
@@ -10,13 +10,15 @@ import {NgIf} from '@angular/common';
     ImageComponent,
     WysiwygComponent,
     RouterLink,
-    NgIf
+    NgIf,
+    NgClass
   ],
   templateUrl: './image-wysiwyg.component.html',
   styleUrl: './image-wysiwyg.component.scss'
 })
 export class ImageWysiwygComponent {
   @Input() data: any;
+
   constructor() {
   }
 }
