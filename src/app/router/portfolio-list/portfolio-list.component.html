@@ -7,7 +7,7 @@
             <a [routerLink]="['/portfolio', item.url]">
               <img
                 [alt]="item.title"
-                [src]="'https://api.craftfire.de' + item.thumbnail.url"
+                [src]="environment.apiUrl+ item.thumbnail.url"
                 class="w-full h-48 object-cover hover:grayscale"
               />
             </a>

@@ -4,6 +4,7 @@ import {BadgeComponent} from "../../components/ui/badge/badge.component";
 import {NgForOf, NgIf} from "@angular/common";
 import {Meta, Title} from '@angular/platform-browser';
 import {ApiService} from '../../api.service';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-blog-list',
@@ -18,6 +19,7 @@ import {ApiService} from '../../api.service';
 })
 export class BlogListComponent implements OnInit {
   strapiData: any;
+  protected readonly environment = environment;
 
   constructor(private metaService: Meta, private titleService: Title, private route: ActivatedRoute, private apiService: ApiService) {
     this.titleService.setTitle('Portfolio');
