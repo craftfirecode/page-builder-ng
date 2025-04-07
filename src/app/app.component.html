@@ -1,17 +1,24 @@
 <mat-drawer-container autosize class="example-container">
   <mat-drawer #drawer class="example-sidenav" mode="over" position="end">
-    <p>Auto-resizing sidenav</p>
-    @if (showFiller) {
-      <p>Lorem, ipsum dolor sit amet consectetur.</p>
-    }
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
+    <ng-container *ngFor="let item of strapiData">
+      <ul>
+        <li>
+          <a (click)="drawer.close()"
+             [routerLink]="item.to"
+             ariaCurrentWhenActive="page"
+             class="flex items-center gap-2 text-[#62748e] py-2 px-3 transition duration-500 hover:text-[#00c16a]"
+             routerLinkActive="text-active bg-active">
+            <i-lucide [name]="item.icon" [size]="25" [strokeWidth]="1"></i-lucide>
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
+    </ng-container>
   </mat-drawer>
 
   <mat-drawer-content>
     <div class="flex flex-col h-[100vh] px-5">
-      <nav class="flex container mx-auto justify-between items-center py-5">
+      <nav class="container flex mx-auto justify-between items-center py-5">
         <ul class="flex gap-2 items-center">
           <li>
             <a routerLink="/">
@@ -29,20 +36,24 @@
             </a>
           </li>
           <ng-container *ngFor="let item of strapiData">
-            <li>
-              <a [routerLink]="item.to"
-                 ariaCurrentWhenActive="page"
-                 class="flex items-center gap-2 text-[#62748e] rounded-md py-2 px-3 transition duration-500 hover:text-[#00c16a]"
-                 routerLinkActive="text-active bg-active">
-                <i-lucide [name]="item.icon" [size]="25" [strokeWidth]="1"></i-lucide>
-                {{ item.label }}
-              </a>
-            </li>
+            <div class="hidden md:flex">
+              <li>
+                <a [routerLink]="item.to"
+                   ariaCurrentWhenActive="page"
+                   class="flex items-center gap-2 text-[#62748e] rounded-md py-2 px-3 transition duration-500 hover:text-[#00c16a]"
+                   routerLinkActive="text-active bg-active">
+                  <i-lucide [name]="item.icon" [size]="25" [strokeWidth]="1"></i-lucide>
+                  {{ item.label }}
+                </a>
+              </li>
+            </div>
           </ng-container>
         </ul>
-        <button (click)="drawer.toggle()" mat-button type="button">
-          Toggle sidenav
-        </button>
+        <div class="flex md:hidden">
+          <button (click)="drawer.toggle()" mat-button type="button">
+            <i-lucide [size]="25" [strokeWidth]="1" color="white" name="menu"></i-lucide>
+          </button>
+        </div>
       </nav>
       <div class="flex flex-col h-[100vh]">
         <main class="flex-1 flex flex-col">
