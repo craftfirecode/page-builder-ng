@@ -5,9 +5,8 @@
         <i-lucide [size]="25" [strokeWidth]="1" color="white" name="x"></i-lucide>
       </button>
     </div>
-
-    <ng-container *ngFor="let item of strapiData">
-      <ul>
+    <ul>
+      <ng-container *ngFor="let item of strapiData">
         <li>
           <a (click)="drawer.close()"
              [routerLink]="item.to"
@@ -18,8 +17,8 @@
             {{ item.label }}
           </a>
         </li>
-      </ul>
-    </ng-container>
+      </ng-container>
+    </ul>
   </mat-drawer>
 
   <mat-drawer-content>
