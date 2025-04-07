@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
-import {MatDrawerContainer, MatSidenavModule} from '@angular/material/sidenav';
-import {MatButton, MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatButtonModule} from '@angular/material/button';
 import {ApiService} from './api.service';
 import {NgForOf} from '@angular/common';
+import {LucideAngularModule} from 'lucide-angular';
 
 export interface StrapiData {
   id: number;
@@ -16,7 +17,7 @@ export interface StrapiData {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatSidenavModule, MatButtonModule, NgForOf],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatSidenavModule, MatButtonModule, NgForOf, LucideAngularModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
