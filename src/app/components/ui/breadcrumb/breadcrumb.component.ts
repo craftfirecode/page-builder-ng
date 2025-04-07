@@ -25,11 +25,8 @@ export class BreadcrumbComponent implements OnInit {
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
       this.breadcrumbSegments = this.getBreadcrumbSegments(this.router.url);
-      console.log(this.breadcrumbSegments);
     });
-
     this.breadcrumbSegments = this.getBreadcrumbSegments(this.router.url);
-    console.log(this.breadcrumbSegments);
   }
 
   buildLink(index: number): string | null {

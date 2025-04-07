@@ -16,8 +16,6 @@ export class PortfolioComponent implements OnInit {
   strapiData = []
 
   constructor(private metaService: Meta, private titleService: Title, private route: ActivatedRoute, private apiService: ApiService) {
-    this.titleService.setTitle('Mein Seitentitel');
-    this.metaService.addTag({name: 'description', content: 'Meine Seitenbeschreibung'});
   }
 
   ngOnInit(): void {
@@ -25,6 +23,8 @@ export class PortfolioComponent implements OnInit {
       const id = params.get('url') ?? '';
       this.apiService.getPostData(id).subscribe(res => {
         this.strapiData = res.data[0].zone;
+        this.titleService.setTitle('CraftFire - ' + res.data[0].settings.title);
+        this.metaService.addTag({name: 'description', content: res.data[0].settings.description});
       });
     });
   }

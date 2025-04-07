@@ -16,8 +16,8 @@ export class IndexComponent implements OnInit {
   strapiData = []
 
   constructor(private metaService: Meta, private titleService: Title, private route: ActivatedRoute, private apiService: ApiService) {
-    this.titleService.setTitle('INDEX');
-    this.metaService.addTag({name: 'description', content: 'Meine Seitenbeschreibung'});
+    this.titleService.setTitle('CraftFire');
+    this.metaService.addTag({name: 'description', content: 'CraftFire UX/UI & Frontend Developer'});
   }
 
   ngOnInit(): void {

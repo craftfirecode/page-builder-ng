@@ -22,7 +22,7 @@ export class PortfolioListComponent implements OnInit {
   protected readonly environment = environment;
 
   constructor(private metaService: Meta, private titleService: Title, private route: ActivatedRoute, private apiService: ApiService) {
-    this.titleService.setTitle('Portfolio');
+    this.titleService.setTitle('CraftFire - Portfolio');
     this.metaService.addTag({name: 'description', content: 'Meine Seitenbeschreibung'});
   }
 
