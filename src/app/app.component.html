@@ -42,17 +42,15 @@
             </a>
           </li>
           <ng-container *ngFor="let item of strapiData">
-            <div class="hidden md:flex">
-              <li>
-                <a [routerLink]="item.to"
-                   ariaCurrentWhenActive="page"
-                   class="flex items-center gap-2 text-white rounded-md py-2 px-3 transition duration-500 hover:text-[#00c16a]"
-                   routerLinkActive="text-active bg-active">
-                  <i-lucide [name]="item.icon" [size]="25" [strokeWidth]="1"></i-lucide>
-                  {{ item.label }}
-                </a>
-              </li>
-            </div>
+            <li class="hidden md:flex">
+              <a [routerLink]="item.to"
+                 ariaCurrentWhenActive="page"
+                 class="flex items-center gap-2 text-white rounded-md py-2 px-3 transition duration-500 hover:text-[#00c16a]"
+                 routerLinkActive="text-active bg-active">
+                <i-lucide [name]="item.icon" [size]="25" [strokeWidth]="1"></i-lucide>
+                {{ item.label }}
+              </a>
+            </li>
           </ng-container>
         </ul>
         <div class="flex md:hidden">
