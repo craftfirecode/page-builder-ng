@@ -23,6 +23,7 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getPageData('index').subscribe(res => {
       this.strapiData = res.data[0].zone;
+      console.log(this.strapiData);
     });
   }
 }

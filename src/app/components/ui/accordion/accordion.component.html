@@ -1,0 +1,10 @@
+<mat-accordion>
+  <ng-container *ngFor="let item of data.accordion; let i = index">
+    <mat-expansion-panel (closed)="panelOpenState.set(false)" (opened)="panelOpenState.set(true)">
+      <mat-expansion-panel-header>
+        <mat-panel-title [innerText]="item.title"></mat-panel-title>
+      </mat-expansion-panel-header>
+      <div [innerHTML]="item.description"></div>
+    </mat-expansion-panel>
+  </ng-container>
+</mat-accordion>

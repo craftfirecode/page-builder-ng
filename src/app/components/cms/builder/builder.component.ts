@@ -5,6 +5,7 @@ import {ImageComponent} from '../../ui/image/image.component';
 import {ImageWysiwygComponent} from '../../ui/image-wysiwyg/image-wysiwyg.component';
 import {SpaceComponent} from '../../ui/space/space.component';
 import {LinkComponent} from '../../ui/link/link.component';
+import {AccordionComponent} from '../../ui/accordion/accordion.component';
 
 @Component({
   selector: 'app-builder',
@@ -16,7 +17,8 @@ import {LinkComponent} from '../../ui/link/link.component';
     ImageComponent,
     ImageWysiwygComponent,
     SpaceComponent,
-    LinkComponent
+    LinkComponent,
+    AccordionComponent
   ],
   templateUrl: './builder.component.html',
   styleUrl: './builder.component.scss'
