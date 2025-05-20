@@ -2,7 +2,7 @@
   @for (item of data.accordion; track item; let index = $index) {
     <cdk-accordion-item #accordionItem="cdkAccordionItem">
       <button
-        class="bg-red-500 w-full text-left p-2"
+        class="bg-gray-100 w-full text-left p-3 flex justify-between"
         (click)="accordionItem.toggle()"
         tabindex="0"
         [attr.id]="'accordion-header-' + index"
