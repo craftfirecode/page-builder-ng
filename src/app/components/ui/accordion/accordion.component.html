@@ -15,13 +15,13 @@
       </button>
       @if (accordionItem.expanded) {
         <div
-          class="example-accordion-item-body"
+          class="my-3 p-2 border-s border-gray-300"
           role="region"
           [style.display]="accordionItem.expanded ? '' : 'none'"
           [attr.id]="'accordion-body-' + index"
           [attr.aria-labelledby]="'accordion-header-' + index"
+          [innerHTML]="item.description"
         >
-          {{ item.description }}
         </div>
       }
     </cdk-accordion-item>

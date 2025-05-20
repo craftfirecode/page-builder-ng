@@ -1,4 +1,4 @@
-<div class="flex grid gap-7 md:grid-cols-1 lg:grid-cols-2 items-center">
+<div class="flex grid gap-7 md:grid-cols-1 lg:grid-cols-2 items-center" [class.items-center]="data.itemsCenter">
   <div>
     <app-image [data]="data"/>
   </div>
@@ -6,7 +6,8 @@
     <app-wysiwyg [data]="data"/>
     <ng-container *ngIf="data?.button">
       <div class="mt-5">
-        <a [innerText]="data.button.value" [routerLink]="data.button.to" class="btn btn-primary"></a>
+        <app-link
+          [data]="data.button"/>
       </div>
     </ng-container>
   </div>
