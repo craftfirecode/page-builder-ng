@@ -1,10 +1,10 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit, signal} from '@angular/core';
-import {MatExpansionModule} from '@angular/material/expansion';
 import {NgForOf} from '@angular/common';
+import {CdkAccordion, CdkAccordionItem} from '@angular/cdk/accordion';
 
 @Component({
   selector: 'app-accordion',
-  imports: [MatExpansionModule, NgForOf],
+  imports: [CdkAccordion, CdkAccordionItem],
   templateUrl: './accordion.component.html',
   styleUrl: './accordion.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

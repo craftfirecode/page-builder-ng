@@ -42,7 +42,7 @@ app.get('/api/navigation', async (req, res) => {
 
 app.get('/api/blogs', async (req, res) => {
   const urlFilter = req.query.url;
-  const urlPart = urlFilter ? `?filters[url][$eq]=${urlFilter}&customPopulate=nested` : `?customPopulate=nested`;
+  const urlPart = urlFilter ? `?filters[url][ $eq]=${urlFilter}&customPopulate=nested` : `?customPopulate=nested`;
   try {
     const response = await fetchFromStrapi(`/api/blogs${urlPart}`);
     res.json(response.data);
