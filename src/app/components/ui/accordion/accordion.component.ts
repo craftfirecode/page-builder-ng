@@ -18,7 +18,7 @@ export class AccordionComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('Component loaded', this.data);
+    // console.log('Component loaded', this.data);
 
   }
 

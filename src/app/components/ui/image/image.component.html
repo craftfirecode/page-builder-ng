@@ -1,5 +1,8 @@
-<img
-  [src]="getImageUrl(data.image.url)"
-  [alt]="data.image.alternativeText || 'alt'"
-  class="w-full"
-/>
+<picture>
+  <source [attr.srcset]="getImageUrl(data.image.formats.small.url)" media="(max-width: 480px)">
+  <source [attr.srcset]="getImageUrl(data.image.formats.small.url)" media="(max-width: 768px)">
+  <source [attr.srcset]="getImageUrl(data.image.formats.medium.url)" media="(max-width: 1024px)">
+  <img [src]="getImageUrl(data.image.formats.medium.url)"
+       [alt]="data.image.alternativeText || 'alt'"
+       class="w-full">
+</picture>
