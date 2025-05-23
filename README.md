@@ -60,4 +60,4 @@ For more information on using the Angular CLI, including detailed command refere
 
 ## server
 
-pm2 start npm --name craftfire -- run serve:ssr:page-builder-ng
+pm2 start npm --name ng -- run serve:ssr:page-builder-ng
