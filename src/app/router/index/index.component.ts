@@ -16,14 +16,13 @@ export class IndexComponent implements OnInit {
   strapiData = []
 
   constructor(private metaService: Meta, private titleService: Title, private route: ActivatedRoute, private apiService: ApiService) {
-    this.titleService.setTitle('CraftFire');
-    this.metaService.addTag({name: 'description', content: 'CraftFire UX/UI & Frontend Developer'});
   }
 
   ngOnInit(): void {
     this.apiService.getPageData('index').subscribe(res => {
       this.strapiData = res.data[0].zone;
-      // console.log(this.strapiData);
+      this.titleService.setTitle(res.data[0].settings.title);
+      this.metaService.addTag({name: 'description', content: res.data[0].settings.description});
     });
   }
 }
