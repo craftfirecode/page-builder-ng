@@ -27,6 +27,21 @@ export class ApiService {
     });
   }
 
+  getPageDataByDocumentID(urlFilter: string): Observable<any> {
+    console.log('getPageData', urlFilter);
+
+    const params = {
+      'filters[documentId][$eq]': urlFilter,
+      'customPopulate': 'nested'
+    };
+    return this.http.get<any>(`${this.apiUrl}/api/pages`, {
+      params,
+      headers: {
+        'authorization': `Bearer ${environment.strapiApi}`
+      }
+    });
+  }
+
   getSettingsData(): Observable<any> {
     const params = {
       'customPopulate': 'nested'

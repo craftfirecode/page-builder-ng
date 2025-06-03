@@ -10,9 +10,6 @@
     "label": {
       "type": "string"
     },
-    "description": {
-      "type": "string"
-    },
     "icon": {
       "type": "string"
     },
