@@ -10,7 +10,6 @@ import {LinkComponent} from '../link/link.component';
   imports: [
     ImageComponent,
     WysiwygComponent,
-    RouterLink,
     NgIf,
     NgClass,
     LinkComponent

@@ -1,37 +1,64 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = environment.bffApiUrl;
+  private apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getPageData(urlFilter: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/pages`, { params: { url: urlFilter } });
+    const params = {
+      'filters[url][$eq]': urlFilter,
+      'customPopulate': 'nested'
+    };
+    return this.http.get<any>(`${this.apiUrl}/api/pages`, {
+      params,
+      headers: {
+        'authorization': `Bearer ${environment.strapiApi}`
+      }
+    });
   }
 
   getSettingsData(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/navigation`);
+    const params = {
+      'customPopulate': 'nested'
+    };
+    return this.http.get<any>(`${this.apiUrl}/api/navigation`, {
+      params,
+      headers: {
+        'authorization': `Bearer ${environment.strapiApi}`
+      }
+    });
   }
 
   getBlogListData(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/blogs`);
+    const params = {
+      'customPopulate': 'nested'
+    };
+    return this.http.get<any>(`${this.apiUrl}/api/blogs`, {
+      params,
+      headers: {
+        'authorization': `Bearer ${environment.strapiApi}`
+      }
+    });
   }
 
-  getBlogData(urlFilter: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/blogs`, { params: { url: urlFilter } });
-  }
-
-  getPostListData(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/posts`);
-  }
-
-  getPostData(urlFilter: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/posts`, { params: { url: urlFilter } });
+  getBlogData(urlFilter?: string): Observable<any> {
+    const params: any = urlFilter
+      ? {url: urlFilter}
+      : {};
+    params['customPopulate'] = 'nested';
+    return this.http.get<any>(`${this.apiUrl}/api/blogs`, {
+      params,
+      headers: {
+        'authorization': `Bearer ${environment.strapiApi}`
+      }
+    });
   }
 }
