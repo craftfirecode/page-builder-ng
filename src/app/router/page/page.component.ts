@@ -14,6 +14,7 @@ import {ApiService} from '../../api.service';
 })
 export class PageComponent implements OnInit {
   strapiData = []
+  pageRelationship!: string;
 
   constructor(private metaService: Meta, private titleService: Title, private route: ActivatedRoute, private apiService: ApiService) {
   }
@@ -21,6 +22,11 @@ export class PageComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const id = params.get('url') ?? '';
+      this.apiService.getPageByHref(id).subscribe(res => {
+        console.log(res.page.documentId);
+        this.pageRelationship = res;
+      });
+
       this.apiService.getPageData(id).subscribe(res => {
         this.strapiData = res.data[0].zone;
         this.titleService.setTitle(res.data[0].settings.title);

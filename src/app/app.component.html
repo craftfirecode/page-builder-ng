@@ -9,7 +9,7 @@
       <ng-container *ngFor="let item of strapiData">
         <li>
           <a (click)="drawer.close()"
-             [routerLink]="item.to"
+             [routerLink]="item.href"
              ariaCurrentWhenActive="page"
              class="flex items-center gap-2 text-white py-2 px-3 transition duration-500 hover:text-[#00c16a]"
              routerLinkActive="text-active bg-active">
@@ -37,7 +37,7 @@
             <ul>
               <ng-container *ngFor="let item of strapiData">
                 <li class="hidden md:flex">
-                  <a [routerLink]="item.to"
+                  <a [routerLink]="item.href"
                      ariaCurrentWhenActive="page"
                      class="flex items-center gap-2 rounded-md py-2 px-3 transition duration-500 hover:text-[#00c16a]"
                      routerLinkActive="active">

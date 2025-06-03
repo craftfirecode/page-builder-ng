@@ -12,7 +12,8 @@ export interface StrapiData {
   label: string;
   description: string | null;
   icon: string;
-  to: string;
+  href: string;
+  pageID: number;
   children: StrapiData[];
 }
 

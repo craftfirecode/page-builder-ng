@@ -16,13 +16,18 @@
     "icon": {
       "type": "string"
     },
-    "to": {
+    "href": {
       "type": "string"
     },
     "children": {
       "type": "component",
       "repeatable": true,
       "component": "items.nav-items-children"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
     }
   }
 }

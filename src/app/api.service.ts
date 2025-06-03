@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {map, Observable} from 'rxjs';
 import {environment} from '../environments/environment';
 
 @Injectable({
@@ -13,6 +13,8 @@ export class ApiService {
   }
 
   getPageData(urlFilter: string): Observable<any> {
+    console.log('getPageData', urlFilter);
+
     const params = {
       'filters[url][$eq]': urlFilter,
       'customPopulate': 'nested'
@@ -35,6 +37,25 @@ export class ApiService {
         'authorization': `Bearer ${environment.strapiApi}`
       }
     });
+  }
+
+  getPageByHref(url: string): Observable<any> {
+    const params = {
+      'populate[top][populate]': '*',
+    };
+
+    return this.http.get<any>(`${this.apiUrl}/api/navigation`, {
+      params,
+      headers: {
+        'authorization': `Bearer ${environment.strapiApi}`
+      }
+    }).pipe(
+      map(res => {
+        const data = res.data;
+        if (!data || !data.top) return null;
+        return data.top.find((item: any) => item.href === url) || null;
+      })
+    );
   }
 
   getBlogListData(): Observable<any> {

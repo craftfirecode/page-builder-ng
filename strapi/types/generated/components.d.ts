@@ -125,9 +125,10 @@ export interface ItemsNavItems extends Struct.ComponentSchema {
   attributes: {
     children: Schema.Attribute.Component<'items.nav-items-children', true>;
     description: Schema.Attribute.String;
+    href: Schema.Attribute.String;
     icon: Schema.Attribute.String;
     label: Schema.Attribute.String;
-    to: Schema.Attribute.String;
+    page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
   };
 }
 
