@@ -6,6 +6,7 @@ import {ApiService} from './api.service';
 import {NgForOf} from '@angular/common';
 import {LucideAngularModule} from 'lucide-angular';
 import {BreadcrumbComponent} from './components/ui/breadcrumb/breadcrumb.component';
+import {MegaMenuComponent} from './components/ui/mega-menu/mega-menu.component';
 
 export interface StrapiData {
   id: number;
@@ -19,7 +20,7 @@ export interface StrapiData {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatSidenavModule, MatButtonModule, NgForOf, LucideAngularModule, BreadcrumbComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatSidenavModule, MatButtonModule, NgForOf, LucideAngularModule, BreadcrumbComponent, MegaMenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
