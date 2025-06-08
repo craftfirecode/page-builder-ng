@@ -10,7 +10,10 @@
         [attr.aria-controls]="'accordion-body-' + index">
         {{ item.title }}
         <span class="example-accordion-item-description">
-        Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+         <i-lucide name="{{ accordionItem.expanded ? 'chevron-up' : 'chevron-down' }}"
+                   [size]="25"
+                   [strokeWidth]="1">
+         </i-lucide>
       </span>
       </button>
       @if (accordionItem.expanded) {
