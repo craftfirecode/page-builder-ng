@@ -1,4 +1,7 @@
+// This file is used to import Tailwind CSS
 @use 'tailwindcss';
+// plugin for Tailwind CSS PrimeUI
+//@plugin "tailwindcss-primeui";
 
 html, body {
   height: 100%;
