@@ -138,6 +138,7 @@ export interface ItemsNavItemsChildren extends Struct.ComponentSchema {
     displayName: 'Nav-items-children';
   };
   attributes: {
+    category: Schema.Attribute.String;
     href: Schema.Attribute.String;
     icon: Schema.Attribute.String;
     label: Schema.Attribute.String;

@@ -19,6 +19,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::page.page"
+    },
+    "category": {
+      "type": "string"
     }
   }
 }

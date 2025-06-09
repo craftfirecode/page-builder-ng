@@ -416,7 +416,7 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
   collectionName: 'navigations';
   info: {
     description: '';
-    displayName: 'navigation';
+    displayName: 'Navigation';
     pluralName: 'navigations';
     singularName: 'navigation';
   };
@@ -433,6 +433,7 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
       'api::navigation.navigation'
     > &
       Schema.Attribute.Private;
+    page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
     publishedAt: Schema.Attribute.DateTime;
     top: Schema.Attribute.Component<'items.nav-items', true>;
     updatedAt: Schema.Attribute.DateTime;
