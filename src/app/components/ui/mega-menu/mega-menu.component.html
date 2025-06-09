@@ -1,10 +1,17 @@
 <div class="menu">
-  <button id="menuButton">Menu</button>
-  <div id="megaMenu" class="mega-menu">
+  <button
+    id="menuButton"
+    (mouseenter)="openMenu()"
+    (mouseleave)="closeMenu()"
+    (click)="toggleMenu()"
+  >
+    Menu
+  </button>
+  <div id="megaMenu" class="mega-menu" (mouseenter)="openMenu()" (mouseleave)="closeMenu()">
     <div class="mega-menu-column">
       <h3>Column 1</h3>
       <ul>
-        <li><a href="#">Link 1</a></li>
+        <li><a href="#" (click)="toggleMenu()">Link 1</a></li>
         <li><a href="#">Link 2</a></li>
         <li><a href="#">Link 3</a></li>
       </ul>
@@ -27,4 +34,3 @@
     </div>
   </div>
 </div>
-
