@@ -42,7 +42,8 @@ export class ApiService {
 
   getSettingsData(): Observable<any> {
     const params = {
-      'populate[top][populate]': '*',
+      'populate[top][populate][page][populate]': '*',
+      'populate[top][populate][children][populate]': '*'
     };
     return this.http.get<any>(`${this.apiUrl}/api/navigation`, {
       params,
