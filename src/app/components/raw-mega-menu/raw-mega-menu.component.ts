@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, viewChild} from '@angular/core';
+import {Component, effect, ElementRef, OnInit, viewChild} from '@angular/core';
 
 @Component({
   selector: 'app-raw-mega-menu',
@@ -10,7 +10,12 @@ export class RawMegaMenuComponent implements OnInit {
 
   saveButton = viewChild<ElementRef<HTMLButtonElement>>('save');
 
+
   ngOnInit() {
     console.log(this.saveButton()?.nativeElement.innerHTML)
   }
+
+  loggingEffect = effect(() => {
+    console.log(`The count is: ${this.saveButton()?.nativeElement.innerHTML}`);
+  });
 }
