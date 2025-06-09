@@ -42,7 +42,7 @@ export class ApiService {
 
   getSettingsData(): Observable<any> {
     const params = {
-      'customPopulate': 'nested'
+      'populate[top][populate]': '*',
     };
     return this.http.get<any>(`${this.apiUrl}/api/navigation`, {
       params,
