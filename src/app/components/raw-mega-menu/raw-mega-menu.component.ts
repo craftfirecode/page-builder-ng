@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, viewChild} from '@angular/core';
 
 @Component({
   selector: 'app-raw-mega-menu',
@@ -6,11 +6,11 @@ import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/
   templateUrl: './raw-mega-menu.component.html',
   styleUrl: './raw-mega-menu.component.scss'
 })
-export class RawMegaMenuComponent implements AfterViewInit {
+export class RawMegaMenuComponent implements OnInit {
 
-  @ViewChild('refButton') refButton!: ElementRef<HTMLDivElement>;
+  saveButton = viewChild<ElementRef<HTMLButtonElement>>('save');
 
-  ngAfterViewInit(): void {
-    console.log(this.refButton.nativeElement.innerHTML);
+  ngOnInit() {
+    console.log(this.saveButton()?.nativeElement.innerHTML)
   }
 }
