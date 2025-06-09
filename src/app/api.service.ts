@@ -13,10 +13,8 @@ export class ApiService {
   }
 
   getPageData(urlFilter: string): Observable<any> {
-    console.log('getPageData', urlFilter);
-
     const params = {
-      'filters[url][$eq]': urlFilter,
+      'filters[indicator][$eq]': urlFilter,
       'customPopulate': 'nested'
     };
     return this.http.get<any>(`${this.apiUrl}/api/pages`, {

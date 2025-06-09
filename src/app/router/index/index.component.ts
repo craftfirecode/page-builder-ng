@@ -17,7 +17,7 @@ export class IndexComponent implements OnInit {
 
   constructor(private metaService: Meta, private titleService: Title, private route: ActivatedRoute, private apiService: ApiService) {
   }
-
+ 
   ngOnInit(): void {
     this.apiService.getPageData('index').subscribe(res => {
       this.strapiData = res.data[0].zone;
